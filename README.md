@@ -53,4 +53,4 @@ Each station adapts to the patrol's level (Trailblazers, Woodsmen or Bushmasters
 
 ## Author
 
-Haytham Hassan, Troop 321G leader. Also building [Ensmblr](https://ensmblr.com), practical AI adoption for small and mid-sized organizations.
+Haytham Hassan
