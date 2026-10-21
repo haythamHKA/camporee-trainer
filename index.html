@@ -234,7 +234,7 @@ function drawMap(){
    <g transform="translate(900,120)"><rect x="-12" y="0" width="24" height="46" fill="#8a5a2b"/><path d="M-16 0 0-24 16 0Z" fill="#14202e"/><circle cy="14" r="9" fill="#fff" stroke="#14202e" stroke-width="2"/><path d="M0 14V8M0 14l4 3" stroke="#14202e" stroke-width="2"/></g>
    <path d="M880 40 868 66h10l-6 20 18-28h-10l8-18Z" fill="#ffd23f" stroke="#c99a00" stroke-width="2"/>
    ${nodes}${sc}`,'0 0 960 440')}</div>
-   <div class="slist">${NODES.map((n,i)=>{const live=LIVE.includes(n.id);return `<button class="sbtn" data-i="${i}"${live?'':' disabled'}><span class="n">${i+1}</span><span>${NINFO[n.id].name}<small>${n.id==='s5'?'Name It · Build It · Score practice':live?'Name It · Build It · Test Yourself':'Coming soon'} <span class="stars">${starsOf(n.id)}</span></small></span></button>`}).join('')}</div>`;
+   <div class="slist">${NODES.map((n,i)=>{const live=LIVE.includes(n.id);return `<button class="sbtn" data-i="${i}"${live?'':' disabled'}><span class="n">${i+1}</span><span>${NINFO[n.id].name}<small>${live?'Name It · Build It · Test Yourself':'Coming soon'} <span class="stars">${starsOf(n.id)}</span></small></span></button>`}).join('')}</div>`;
   const road=document.getElementById('road');const L=road.getTotalLength();
   pathLens=NODES.map(n=>{let bi=0,bd=1e9;for(let s=0;s<=600;s++){const p=road.getPointAtLength(L*s/600);const d=(p.x-n.x)**2+(p.y-n.y)**2;if(d<bd){bd=d;bi=s}}return L*bi/600});
   document.querySelectorAll('.node,.sbtn').forEach(el=>{const go=()=>{const i=+el.dataset.i;const n=NODES[i];if(!LIVE.includes(n.id))return;walkTo(i)};
